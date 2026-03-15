@@ -1,0 +1,22 @@
+git init
+git add .
+git config --global user.name "name"
+git config --global user.email "mail"
+git config --global --replace-all user.email "your_email@example.com"
+
+echo "hello"> hello.txt
+cat hello.txt
+git remote add origin 
+git branch -M main
+git reset --soft HEAD~1
+git reset --hard HEAD~1
+
+git remote remove origin
+
+git remote set-url origin https://username@gitlab.com/username/project.git
+
+type C:\ProgramData\Jenkins\.jenkins\secrets\initialAdminPassword
+http://localhost:8080
+
+where python
+
