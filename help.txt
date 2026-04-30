@@ -1,0 +1,42 @@
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+EXPOSE 80
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Docker Website</title>
+</head>
+<body>
+    <h1>Hello from Docker 🚀</h1>
+    <p>This is a static website running inside a container.</p>
+</body>
+</html>
+
+
+FROM openjdk:latest
+WORKDIR /app
+COPY . .
+RUN javac App.java
+CMD ["java","App"]
+
+
+class App{
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Hello, Jenkins is working'
+            }
+        }
+    }
+}
+
+
